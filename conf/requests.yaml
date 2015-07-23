@@ -1,2 +1,6 @@
-users.findAll:    select * from `users`
-users.findByName: select * from `users` where `name` = :name
+users:
+    findAll:    select * from `users`
+    findByName: select * from `users` where `name` = :name
+    create:     insert into `users` (`name`) values (:name)
+    saveById:   update `users` set `name` = :name where `id` = :id
+    saveByName: update `users` set `name` = :name where `name` = :oldName
